@@ -6,9 +6,9 @@ Minimal Spesifikasi VPS untuk Multipel Node
 
 16GB RAM
 
-500GB Storage
+500GB SSD Storage 
 
-Kalau 4 VCPU 8GB RAM 200GB Storage bisa cuman 1 Node Docker dan gak boleh di gabung sama apa" lagi kalau tidak akan terjadi error 
+Kalau 4 VCPU 8GB RAM 200GB SSD Storage bisa cuman 1 Node Docker dan gak boleh di gabung sama apa" lagi kalau tidak akan terjadi error 
 
 <strong>Disarankan menggunakan VPS Provider Contabo karena ada Cap Badak nya</strong>
 
