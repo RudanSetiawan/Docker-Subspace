@@ -1,6 +1,6 @@
 # Docker-Subspace
 
-Minimal Spesifikasi VPS untuk multipel node 
+Minimal Spesifikasi VPS untuk Multipel Node 
 
 8CORE VCPU
 
