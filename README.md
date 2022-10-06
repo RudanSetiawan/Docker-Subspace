@@ -8,7 +8,7 @@ Minimal Spesifikasi VPS untuk multipel node
 
 500GB Storage
 
-Kalau 4 VCPU 8GB RAM 200GB Storage bisa cuman 1 Node dan gak boleh di gabung sama apa" lagi kalau tidak akan terjadi error 
+Kalau 4 VCPU 8GB RAM 200GB Storage bisa cuman 1 Node Docker dan gak boleh di gabung sama apa" lagi kalau tidak akan terjadi error 
 
 Install Docker 
 ```
