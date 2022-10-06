@@ -27,6 +27,13 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
+Folder Node
+```
+cd $HOME
+mkdir node1
+cd node1
+```
+
 Install script Subspace
 ```
 sudo tee docker-compose.yml > /dev/null <<EOF
