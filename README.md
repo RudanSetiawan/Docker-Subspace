@@ -89,8 +89,102 @@ EOF
 ```
 
 Edit Script
-ubah bagian NAMANODE dan ADDRESSREWARD kalau sudah Ctrl+X trus Y dan Enter
+ubah bagian <strong>NAMANODE</strong> dan <strong>ADDRESSREWARD</strong> kalau sudah Ctrl+X trus Y dan Enter tanda "" jangan dihapus yah
 ```
 nano docker-compose.yml
 ```
 
+Jalankan Script
+```
+docker-compose up -d
+```
+
+Cek Log
+```
+docker-compose logs --tail=1000 --follow
+```
+
+## <strong>Tutorial untuk Nuyul lebih dari 1 </strong>
+
+angkat dibelakang tulisan <strong>node</strong> dirubah jika mau lebih dari 2
+```
+cd $HOME
+mkdir node2
+cd node2
+```
+
+Masukkan Script 
+```
+sudo tee docker-compose.yml > /dev/null <<EOF
+version: "3.7"
+services:
+  node:
+    image: ghcr.io/subspace/node:gemini-2a-2022-sep-10
+    volumes:
+      - node-data:/var/subspace:rw
+    ports:
+      - "0.0.0.0:PORT:PORT"
+    restart: unless-stopped
+    command: [
+      "--chain", "gemini-2a",
+      "--base-path", "/var/subspace",
+      "--execution", "wasm",
+      "--state-pruning", "archive",
+      "--port", "PORT",
+      "--rpc-cors", "all",
+      "--rpc-methods", "safe",
+      "--unsafe-ws-external",
+      "--validator",
+      "--name", "NAMANODE"
+    ]
+    healthcheck:
+      timeout: 5s
+      interval: 30s
+      retries: 5
+
+  farmer:
+    depends_on:
+      node:
+        condition: service_healthy
+    image: ghcr.io/subspace/farmer:gemini-2a-2022-sep-10
+    volumes:
+      - farmer-data:/var/subspace:rw
+    ports:
+      - "0.0.0.0:PORT:PORT"
+    restart: unless-stopped
+    command: [
+      "--base-path", "/var/subspace",
+      "farm",
+      "--node-rpc-url", "ws://node:9944",
+      "--ws-server-listen-addr", "0.0.0.0:9955",
+      "--listen-on", "/ip4/0.0.0.0/tcp/PORT",
+      "--reward-address", "ADDRESSREWARD",
+      "--plot-size", "30G"
+    ]
+volumes:
+  node-data:
+  farmer-data:
+EOF
+```
+
+Ubah bagian <strong>PORT</strong>, <strong>NAMANODE</strong>, dan <strong>ADDRESSREWARD</strong> tanda "" jangan dihapus yah
+```
+nano docker-compose.yml
+```
+
+Jalankan Script
+```
+docker-compose up -d
+```
+
+Cek Log
+```
+docker-compose logs --tail=1000 --follow
+```
+
+Delete Node di docker
+```
+docker-compose down --volumes
+```
+
+## Terima kasih
