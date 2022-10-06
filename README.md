@@ -87,3 +87,10 @@ volumes:
   farmer-data:
 EOF
 ```
+
+Edit Script
+ubah bagian NAMANODE dan ADDRESSREWARD kalau sudah ctrl+x
+```
+nano docker-compose.yml
+```
+
