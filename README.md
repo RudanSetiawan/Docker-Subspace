@@ -1,6 +1,6 @@
 # Docker-Subspace
 
-Minimal Spesifikasi VPS untuk multipel node
+Minimal Spesifikasi VPS untuk multipel node 
 
 8CORE VCPU
 
@@ -9,6 +9,8 @@ Minimal Spesifikasi VPS untuk multipel node
 500GB Storage
 
 Kalau 4 VCPU 8GB RAM 200GB Storage bisa cuman 1 Node Docker dan gak boleh di gabung sama apa" lagi kalau tidak akan terjadi error 
+
+<strong>Disarankan menggunakan VPS Provider Contabo karena ada Cap Badak nya</strong>
 
 Install Docker 
 ```
