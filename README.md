@@ -89,7 +89,7 @@ EOF
 ```
 
 Edit Script
-ubah bagian NAMANODE dan ADDRESSREWARD kalau sudah ctrl+x
+ubah bagian NAMANODE dan ADDRESSREWARD kalau sudah Ctrl+X trus Y dan Enter
 ```
 nano docker-compose.yml
 ```
