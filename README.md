@@ -95,6 +95,10 @@ ubah bagian <strong>NAMANODE</strong> dan <strong>ADDRESSREWARD</strong> kalau s
 ```
 nano docker-compose.yml
 ```
+Open Port
+```
+ufw allow 22 && ufw allow 11333 && ufw allow 22333 && ufw enable
+```
 
 Jalankan Script
 ```
