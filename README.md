@@ -178,6 +178,11 @@ Ubah bagian <strong>PORT</strong>, <strong>NAMANODE</strong>, dan <strong>ADDRES
 nano docker-compose.yml
 ```
 
+Open Port tanda $$ ganti sama Port yang sudah ditulis didalam Script
+```
+ufw allow $$ && ufw allow $$ && ufw enable
+```
+
 Jalankan Script
 ```
 docker-compose up -d
